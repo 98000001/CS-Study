@@ -29,4 +29,5 @@ PC 레지스터 (PC Register)
 ### 힙 영역 (Heap Area)
 - new 키워드로 생성된 객체와 배열이 생성되는 영역입니다. 
 - 주기적으로 GC가 제거하는 영역입니다.
+
 ![image](https://github.com/98000001/CS-Study/assets/96863137/6f5d49f8-1837-4d25-a280-407cb32e5ae8)

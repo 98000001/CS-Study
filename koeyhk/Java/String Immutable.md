@@ -34,3 +34,9 @@ System.out.println(str == str2);	// true (같은 객체를 재사용하기 때�
 System.out.println(str == str3);	// false
 System.out.println(str.equals(str3));	// true
 ```
+
+<br><br><br><br><br><br>
+
+참고 자료: <br>
+https://wonit.tistory.com/588 <br>
+https://deveric.tistory.com/123

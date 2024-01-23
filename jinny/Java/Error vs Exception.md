@@ -17,6 +17,7 @@ ClassNotFoundException, IllegalAcessException, NoSuchMethod
 ## 예외 처리
 Checked Exception 컴파일 예외클래스
 checked exception은 반드시 try - catch 문으로 감싸야함
+트랜잭션 Rollback이 안된다는 속성
 
 Unchecked Exception 런타임 예외클래스
 

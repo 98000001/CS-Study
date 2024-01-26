@@ -1,20 +1,19 @@
 ## Lambda expression(람다 표현식)
 메서드로 전달할 수 있는 Anonymous function(익명 함수)를 단순한 문법으로 표기
 
-// 익명 클래스로 Runnalbe을 구현
+'''
 Thread thread = new Thread(new Runnable() {
     @Override
     public void run() {
         System.out.println("Start to new thread!");
     }
-});
-
+});// 익명 클래스로 Runnalbe을 구현
 thread.start();
+'''
 
-// 람다 표현식으로 단순하게 표현
-Thread thread = new Thread(() -> System.out.println("Start to new thread!"));
-        
-thread.start();
+'''
+Thread thread = new Thread(() -> System.out.println("Start to new thread!"));// 람다 표현식으로 단순하게 표현
+'''
 
 ## Functional interface(함수형 인터페이스)
 단 하나의 추상 메서드를 갖는 인터페이스를 함수형 인터페이스 (static 함수는 여러 개 가질 수 있습니다.)

@@ -1,4 +1,4 @@
-컬렉션 프레임워크(collection framework)
+# 컬렉션 프레임워크(collection framework)
 다수의 데이터를 쉽고 효과적으로 처리할 수 있는 표준화된 방법을 제공하는 클래스의 집합
 
 ## Map

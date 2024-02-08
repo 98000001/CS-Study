@@ -29,24 +29,6 @@ IoC를 담당하는 컨테이너 => 빈 팩토리(Spring container에 대한 기
 외부에서 따로 만든 객체를 사용하는 객체에 외부에서 주입시켜 느슨하게 결합 < 인터페이스 사용 < config & @ 어노테이션 
 ##### Spring 컨테이너에 클래스를 넣어 Spring 컨테이너가 알아서 객체를 생성하고 의존성 객체를 주입 하도록 하는 기능
 
-1. 생성자 방식(constructor-based injection)
-   – Bean의 생성자(constructor)를 통해 의존 객체를 주입
-   – 이용가능한 생성자가 bean 클래스에 정의되어야 함
-3. Setter method 방식 (setter-based injection)
-   – Property에 대한 setter method를 통해 의존 객체 주입
-   – Bean class에 property에 대한 setter method가 정의되어 있어야 함
-
-생성자 방식
-   – Bean 객체를 생성하는 시점에 모든 의존 객체가 주입됨
-   – 성능상 유리하고, 객체를 사용하기 전에 필요한 의존 객체가 모두 주입된 상태이므로 NullPointerException 발생 가능성 낮음 
-   – 생성자의 인자들의 순서대로 적합한 의존 객체를 전달해야 함 인자가 많을 경우 어떤 필드에 어떤 의존 객체를 주입하는지 파악하기 어려움
-
-Setter method 방식 
-   – 생성자를 통해 bean 객체가 생성된 후 의존 객체가 주입됨
-   – setter method를 통해 각 필드마다 필요한 의존 객체를 주입하므로 설정이 명확하고 용이함
-   – setter들을 별도로 실행하므로 성능이 다소 저하되고, setter의 실행이 누락된 경우 해당 객체 참조 시 NullPointerException 발생 가능
-
-
 ## AOP(Aspect Oriented Programming)
 핵심적이진 않지만 전반적으로 필요한 공통적으로 적용되는 공통기능
 공통 관심 사항(Cross-cutting concern) : 애플리케이션 전반에 걸쳐 공통적으로 사용되는 기능

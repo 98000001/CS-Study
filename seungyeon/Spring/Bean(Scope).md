@@ -4,7 +4,8 @@
 
 - 스프링이 시작될 때 함께 생성되고, 스프링 컨테이너가 종료될 때까지 유지되는 것
 - Spring IoC 컨테이너에 의해 인스턴스화, 관리, 생성됨
-- Spring에서 관리하는 POJO
+- Spring에서 관리하는 POJO 객체
+- Spring IoC 컨테이너가 관리하는 자바 객체
 
 ## Spring Bean Scope
 
@@ -40,7 +41,7 @@ Bean 이 존재할 수 있는 범위
 - 의존 관계를 외부에서 주입 받는것이 아니라, *직접 필요한 의존관계를 찾는 것* DL (Dependency Lookup) , 의존관계 조회.
     - 지정한 빈을 컨테이너에서 대신 찾아주는 DL(Dependency Lookup)
 - getObject() 호출시 스프링 컨테이너를 통해 해당 빈을 찾아 반환
-- 스프링이 제공하는 기능을 사용하지만 기능이 단순해 단윈 테스트를 만들거나 mock 코드 만들기는 쉬움
+- 스프링이 제공하는 기능을 사용하지만 기능이 단순해 단위 테스트를 만들거나 mock 코드 만들기는 쉬움
 
 ## 웹 스코프
 
@@ -55,4 +56,19 @@ Bean 이 존재할 수 있는 범위
     - Servlet Context와 같은 범위로 유지되는 스코프
 - Singleton Bean 은 스프링 컨테이너 생성 시 함께 생성되어 라이프 사이클을 같이 하지만, 웹 스코프는 HTTP 요청이 올 때 새로 생성되고 응답하면 사라지기 때문에, Singleton Bean 생성 시점에는 아직 생성되지 않음. 따라서 의존관계 주입 불가 → proxy
 
-### Proxy
+### Spring Bean의 생명주기
+
+- `객체 생성 → 의존 설정 → 초기화 → 사용 → 소멸`
+- Bean은 스프링 컨테이너에 의해 생명주기를 관리
+- 빈 초기화방법은 @PostConstruct를 빈 소멸에서는 @PreDestroy를 사용
+- 생성한 스프링 빈을 등록할 때는 ComponentScan을 이용하거나 @Configuration 의 @Bean 을 사용하여 Bean 설정파일에 직접 Bean을 등록
+
+### Spring에서 Singleton 을 사용하는 이유
+
+Application Context 에 의해 등록되는 Bean은 기본적으로 Singleton으로 관리됨
+
+여러번 Bean을 요청해도 매번 동일한 객체를 돌려줌
+
+Singleton 으로 Bean을 관리하는 이유는 대규모 트래픽을 처리할 수 있도록 하기 위해
+
+Bean을 Singleton Scope로 관리해 1개의 요청이 왔을 때 여러 스레드가 Bean을 공유해 처리하도록 함.

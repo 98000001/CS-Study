@@ -13,8 +13,16 @@ JPA 를 사용하기 위해서 반드시 Hibernate 를 사용할 필요는 없�
 ## Spring Data JPA
 Spring Data JPA는 Spring에서 제공하는 모듈 중 하나로,  Repository라는 인터페이스를 제공해서 개발자가 JPA를 더 쉽게 사용할 수 있도록 도와준당
 Hibernate와 같은 구현체들을 좀 더 쉽게 사용할 수 있도록 추상화한 것.
+<img width="708" alt="image" src="https://github.com/98000001/CS-Study/assets/96863137/dddaafb7-8957-4e9d-823f-ee8f44db8fa7">
 
 <img width="458" alt="image" src="https://github.com/98000001/CS-Study/assets/96863137/4fa12338-0eec-4fab-b04a-e1cdecceb833">
+
+### Hibernate가 JPA 인터페이스를 준수하는 구현이고, Spring Data JPA가 유용하게 사용할 수 있게끔 하는 모듈이자 프레임워크인 것이다.
+
++ Querydsl은 HQL(Hibernate Query Language) 쿼리를 Type-Safe하게 유지보수해야 할 필요로 탄생
++ Querydsl은 타입 세이프한 SQL 쿼리형태를 자바 코드로 작성할 수 있게 해주는 프레임워크
+
+  <img width="374" alt="image" src="https://github.com/98000001/CS-Study/assets/96863137/4df21ad4-30c7-48d7-9935-5d23171c16d9">
 
 ## mybatis(SQL Mapper) vs spring data jpa(ORM)
 
